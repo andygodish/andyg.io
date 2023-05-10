@@ -16,24 +16,19 @@ const Overlay: React.FC<OverlayProps> = (props): React.ReactElement => {
         {
           props.links.map((link, index) => {
             return (
-              <li key={index} className='py-2 text-center text-2xl font-[poppins]'>
+              <li key={index} className='py-2 text-center text-2xl hover:text-ubuntuOrange-700'>
                 <Link onClick={() => props.handleMenuClick(props.showMenu)} to={link.path}>{link.name}</Link>
               </li>
             )
           })
         }
       </ul >
-      <div className='uppercase text-xl text-center mb-12'>
-        <Link onClick={() => props.handleMenuClick(props.showMenu)} to={'/contact'}>
-          Schedule Your Free Estimate Today
-        </Link>
-      </div>
-      <hr className='w-1/4 mb-12'></hr>
+      <hr className='w-1/2 mb-12'></hr>
       <div className='flex space-x-3'>
         {
           Object.values(socialLinks).map((socialLink, index) => {
-            return (
-              <Link key={index} to={socialLink.url} className='cursor-pointer'>
+            if (!socialLink.url) return null; return (
+              <Link key={index} to={socialLink.url} className='cursor-pointer hover:text-ubuntuOrange-700'>
                 <socialLink.icon size={"2rem"} />
               </Link>
             )

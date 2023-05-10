@@ -18,7 +18,7 @@ export default async function sendContactEmail(data: ContactFormData) {
     },
   });
 
-  const htmlContent = `A user has filled out the Contact form on your webapp with the following information: <br><br> ${data.name} <br> ${data.email} <br> ${data.phone} <br> ${data.message}`
+  const htmlContent = `A user has filled out the Contact form on your webapp with the following information: <br><br> ${data.name} <br> ${data.email} <br> ${data.message}`
 
 
   // send mail with defined transport object

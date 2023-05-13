@@ -70,7 +70,7 @@ const NavBar: React.FC<NavBarProps> = (_props): React.ReactElement => {
               </Link>
             </span>
           </div>
-          <div className='flex items-center'>
+          <div className='hidden md:flex md:items-center'>
 
             <ul className={`hidden md:flex md:items-center z-[-1] md:z-auto absolute md:static w-full left-0 md:w-auto md:py-0 
             py-4 md:pl-0 pl-7 opacity-0 md:opacity-100`}

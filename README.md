@@ -40,3 +40,4 @@ We use [Prettier](https://prettier.io/) for auto-formatting in this project. It'
 - If semantic release cannot locate a previous tag, it makes the following 1.0.0
 - Starting version will be v0.0.1
 - Make sure you delete your tags when resetting
+- removed plugins (github & npm), the former prevented the creation of an actual GH release

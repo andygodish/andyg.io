@@ -2,6 +2,8 @@ import { Link } from '@remix-run/react';
 import React from 'react'
 import { NavBarLink } from '~/components/NavBar/NavBar';
 import { socialLinks } from '../Footer/Footer';
+import { Theme, useTheme } from '~/utils/theme-provider';
+import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 
 export interface OverlayProps {
   links: NavBarLink[];
@@ -10,9 +12,20 @@ export interface OverlayProps {
 }
 
 const Overlay: React.FC<OverlayProps> = (props): React.ReactElement => {
+  const [theme, setTheme] = useTheme()
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT));
+  };
+
   return (
     <div className='p-5 flex flex-col justify-center items-center text-white fixed left-0 h-full w-full bg-gray-900 z-40 transition-all duration-500'>
+      <div className='mb-8'>
+
+        {theme != Theme.DARK ? <MdOutlineLightMode size={'2rem'} className='cursor-pointer hover:text-ubuntuOrange-700' onClick={toggleTheme} /> : <MdOutlineDarkMode size={'2rem'} className='cursor-pointer hover:text-ubuntuOrange-700' onClick={toggleTheme} />}
+      </div>
       <ul className='flex flex-col mb-16' >
+
         {
           props.links.map((link, index) => {
             return (

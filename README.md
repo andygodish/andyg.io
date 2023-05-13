@@ -36,3 +36,5 @@ We use [Prettier](https://prettier.io/) for auto-formatting in this project. It'
 ## CICD
 
 ### Semantic Versioning
+
+- If semantic release cannot locate a previous tag, it makes the following 1.0.0

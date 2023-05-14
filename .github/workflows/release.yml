@@ -29,10 +29,11 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push
-      uses: docker/build-push-action@v4
+    - name: Set VERSION env variable
       run: |
         VERSION=$(cat VERSION)
+    - name: Build and push
+      uses: docker/build-push-action@v4
       with:
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:$VERSION

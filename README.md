@@ -37,7 +37,33 @@ We use [Prettier](https://prettier.io/) for auto-formatting in this project. It'
 
 ### Semantic Versioning
 
-- If semantic release cannot locate a previous tag, it makes the following 1.0.0
-- Starting version will be v0.0.1
-- Make sure you delete your tags when resetting
+The `release.yml` runs the `npx semantic-release` command and results in the creation of a new github tag based on the commit messages present since the last tag. 
+
+Configuration for semantic-release is found in the release.config.js file in the root directory. The following plugins are being used: 
+
+- commit-analyzer
+- release-notes-generator
+- npm (publishing disabled)
+- git
+
+The github plugin (recommended by the docs/tutorial) was removed, preventing the creation of a github release. Instead I opted to just create tags since I will be pushing docker images. 
+
+Use the following prefixes to up the version:
+
+- `fix:`                - ups the patch
+- `feat:`               - ups the minor and resets the patch 
+- `BREAKING CHANGE:`    - *follows two line breaks* ups the major and resets the minor and patch 
+
+```
+# example commit message:
+
+feat: added new feature
+# 1
+# 2
+BREAKING CHANGE: This will up the major version
+```
+
+#### Notes
+
+- If semantic release cannot locate a previous tag, it uses v1.0.0 as the starting tag.
 - removed plugins (github & npm), the former prevented the creation of an actual GH release

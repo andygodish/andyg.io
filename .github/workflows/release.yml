@@ -10,6 +10,8 @@ jobs:
       issues: write   
       pull-requests: write
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.semver.outputs.VERSION }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -18,8 +20,15 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npx semantic-release
+      id: semver
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+  docker:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:  
+    - uses: actions/checkout@v3
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
@@ -29,15 +38,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - run: |
-        git config --global user.email "agodish18@gmail.com"
-        git config --global user.name "Andy Godish"
-        git add .
-        git commit -m "chore: release ${{ env.VERSION }}"
-        git push 
-        git pull -r
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:${{ env.VERSION }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:${{ needs.release.outputs.VERSION }}

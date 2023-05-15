@@ -23,6 +23,7 @@ jobs:
       id: semver
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: npm cache clean --force
     
   docker:
     runs-on: ubuntu-latest

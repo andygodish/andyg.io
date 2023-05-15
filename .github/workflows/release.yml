@@ -31,9 +31,9 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Set VERSION env variable
       run: |
-        VERSION=$(cat VERSION)
+        echo "VERSION=$(cat VERSION)"" >> $GITHUB_ENV
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:$VERSION
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:${{ env.VERSION }}

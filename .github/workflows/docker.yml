@@ -8,17 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - uses: actions/checkout@v3
-    # - name: Pull latest changes
-    #   run: |
-    #     git config user.name 'github-actions'
-    #     git config user.email 'github-actions@github.com'
-    #     git pull -r
-    #     cat package.json
-    # - uses: actions/checkout@v3
-    #   with:
-    #     ref: ${{ needs.release.outputs.VERSION }}
-    # - name: Set up QEMU
-    #   uses: docker/setup-qemu-action@v2
+      with:
+        fetch-depth: 0
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Login to Docker Hub

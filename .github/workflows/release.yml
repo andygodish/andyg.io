@@ -29,7 +29,11 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - run: git pull -r
+    - run: |
+        git add .
+        git commit -m "chore: release ${{ env.VERSION }}"
+        git push 
+        git pull -r
     - name: Build and push
       uses: docker/build-push-action@v4
       with:

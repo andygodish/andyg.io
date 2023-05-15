@@ -10,9 +10,9 @@ const config = {
       'assets': ['package.json'],
       'message': 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
     }],
-    ['@semantic-release/exec', {
-      'successCmd': 'echo "VERSION=v${nextRelease.version}" >> $GITHUB_OUTPUT'
-    }]
+    // ['@semantic-release/exec', {
+    //   'successCmd': 'echo "VERSION=v${nextRelease.version}" >> $GITHUB_OUTPUT'
+    // }]
   ]
 };
 

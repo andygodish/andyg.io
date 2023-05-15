@@ -40,7 +40,6 @@ RUN npm run build
 # Finally, build the production image with minimal footprint
 FROM base
 
-# ENV DATABASE_URL=file:/data/sqlite.db
 ENV NODE_ENV="production"
 
 # add shortcut for connecting to database CLI

@@ -29,6 +29,8 @@ jobs:
     needs: release
     steps:  
     - uses: actions/checkout@v3
+      with:
+        ref: ${{ needs.release.outputs.VERSION }}
     - name: Pull latest changes
       run: |
         git config user.name 'github-actions'

@@ -43,6 +43,7 @@ jobs:
         git config user.name 'github-actions'
         git config user.email 'github-actions@github.com'
         git pull
+        cat package.json
     - name: Build and push
       uses: docker/build-push-action@v4
       with:

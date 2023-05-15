@@ -11,7 +11,7 @@ const config = {
       'message': 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
     }],
     ['@semantic-release/exec', {
-      'prepareCmd': 'echo "${nextRelease.version}" > VERSION'
+      'prepareCmd': 'echo "VERSION=${nextRelease.version}" >> $GITHUB_ENV'
     }]
   ]
 };

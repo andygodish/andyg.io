@@ -50,5 +50,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
+        no-cache: true
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/andygio:${{ needs.release.outputs.VERSION }}

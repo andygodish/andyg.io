@@ -1,6 +1,6 @@
 {
   "name": "remix-example",
-  "version": "0.1.2",
+  "version": "0.5.1",
   "private": true,
   "sideEffects": false,
   "scripts": {
@@ -50,6 +50,7 @@
     "@faker-js/faker": "^7.6.0",
     "@remix-run/dev": "^1.15.0",
     "@remix-run/eslint-config": "^1.15.0",
+    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.7",
     "@testing-library/cypress": "^8.0.7",

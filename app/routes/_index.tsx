@@ -1,23 +1,21 @@
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { techStackLogos } from '~/utils/techStack-logos';
+import { TextSectionBody } from '~/components/TextSection/TextSectionBody/TextSectionBody';
+import { TextSectionHeader } from '~/components/TextSection/TextSectionHeader/TextSectionHeader';
+
+
 
 export default function Index() {
     return (
         <main className="min-h-screen 
-          bg-warmGrey-100 dark:bg-darkAubergine-900 
-          text-ubuntuOrange-700">
+          bg-warmGrey-100 dark:bg-darkAubergine-900">
             <div className="pt-32 px-5 m-auto 
-              max-w-screen-xl
-              text-4xl \
-              font-bold">
-                <div className="mb-2">
+              max-w-screen-xl">
+                <TextSectionHeader textSize='text-4xl'>
                     Andy Godish
-                </div>
-                <div className="text-lg dark:text-canonicalAubergine-400 text-darkAubergine
-                  font-light 
-                  flex
-                  mb-16">
+                </TextSectionHeader>
+                <TextSectionBody isFlex={true} isLastSection={true} textSize='text-lg'>
                     ~$ &nbsp;
                     <Typewriter options={{ delay: 50 }} onInit={typewriter => {
                         typewriter.typeString('software developer')
@@ -33,36 +31,29 @@ export default function Index() {
                             .typeString('personal website')
                             .start();
                     }} />
-                </div>
-                <div className='text-3xl 
-                  mb-4'>
+                </TextSectionBody>
+                <TextSectionHeader textSize='text-3xl'>
                     About
-                </div>
-                <div className='text-lg dark:text-canonicalAubergine-400 text-darkAubergine text-justify
-                  mb-4
-                  font-light'>
-                    After spending several years in sports medicine, I moved into the tech field in 2018 - at first, writing Python scripts and performing 
+                </TextSectionHeader>
+                <TextSectionBody textSize='text-lg'>
+                    After spending several years in sports medicine, I moved into the tech field in 2018 - at first, writing Python scripts and performing
                     some basic scripting. I was eventually able to parlay this experience into a full stack web development position at a small defense
-                    contractor, working primarily with Node.js. It was in this role that I got exposure to Docker, Kubernetes, and an entire suite of DevOps tools 
-                    that comprised <Link to={'https://p1.dso.mil/'} className="text-ubuntuOrange-700">Platform One. </Link> I have since developed an interest 
+                    contractor, working primarily with Node.js. It was in this role that I got exposure to Docker, Kubernetes, and an entire suite of DevOps tools
+                    that comprised <Link to={'https://p1.dso.mil/'} className="text-ubuntuOrange-700">Platform One. </Link> I have since developed an interest
                     in all things containers and continuously experimenting with open source technologies in my homelab and at work.
-                </div>
-                <div className='text-lg dark:text-canonicalAubergine-400 text-darkAubergine text-justify 
-                mb-4
-                font-light'>
-                    Currently, I work as a DevOps Engineer in Colorado where I am responsible for the development and maintenance of applications 
-                    running both in the cloud and on-prem infrastructure. My day to day consists of administering Kubernetes clusters, building 
-                    CI/CD pipelines, managing IaC repositories using Terraform, and using Ansible to manage server configurations. 
-                </div>
-                <div className='text-lg dark:text-canonicalAubergine-400 text-darkAubergine text-justify 
-                mb-16
-                font-light'>
-                    My plan is to use this site as a resume of sorts. I'll continue to integrate additional open source services to my production environment. 
-                </div>
+                </TextSectionBody>
+                <TextSectionBody textSize='text-lg'>
+                    Currently, I work as a DevOps Engineer in Colorado where I am responsible for the development and maintenance of applications
+                    running both in the cloud and on-prem infrastructure. My day to day consists of administering Kubernetes clusters, building
+                    CI/CD pipelines, managing IaC repositories using Terraform, and using Ansible to manage server configurations.
+                </TextSectionBody>
+                <TextSectionBody isLastSection={true} textSize='text-lg'>
+                    My plan is to use this site as a resume of sorts. I'll continue to integrate additional open source services to my production environment.
+                </TextSectionBody>
                 <div className="pb-32">
-                    <div className='text-3xl text-center mb-4'>
+                    <TextSectionHeader textAlign='text-center' textSize='text-3xl'>
                         Tech Stack
-                    </div>
+                    </TextSectionHeader>
                     <div className=" mt-6 flex flex-wrap justify-center gap-8">
                         {techStackLogos.map((img) => (
                             <a

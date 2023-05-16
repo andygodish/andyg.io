@@ -73,8 +73,3 @@ feat: added new feature
 # 2
 BREAKING CHANGE: This will up the major version
 ```
-
-#### Notes
-
-- If semantic release cannot locate a previous tag, it uses v1.0.0 as the starting tag.
-- removed plugins (github & npm), the former prevented the creation of an actual GH release

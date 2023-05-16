@@ -35,6 +35,17 @@ We use [Prettier](https://prettier.io/) for auto-formatting in this project. It'
 
 ## CICD
 
+### Current Process
+
+Create a new feature branch, write code, profit. 
+
+Then, merge code into the Develop branch. This will act as a staging environment and will eventually (**TODO**) deploy to my homelab RKE2 cluster for smoke testing. 
+
+This is followed by a merge into the main branch. There's currently no automation, but once in main, you can execute these workflows:
+
+- Release: Uses semantic-release + plugins to tag the repo based on commit message prefixes 
+- Docker: Takes the last tag and pushes a new docker image
+
 ### Semantic Versioning
 
 The `release.yml` runs the `npx semantic-release` command and results in the creation of a new github tag based on the commit messages present since the last tag. 

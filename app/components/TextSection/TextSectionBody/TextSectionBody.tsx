@@ -14,7 +14,7 @@ export const TextSectionBody: React.FC<TextSectionBodyProps> = (props): React.Re
     return (
         <div className={`${marginCondition} 
           font-light 
-          ${props.textSize} dark:text-canonicalAubergine-400 text-darkAubergine 
+          ${props.textSize} dark:text-canonicalAubergine-400 text-darkAubergine text-justify 
           ${flexCondition}`}>
             {props.children}
         </div>

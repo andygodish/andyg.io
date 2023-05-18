@@ -33,8 +33,8 @@ const Footer: React.FC<FooterProps> = (_props): React.ReactElement => {
                     </div>
                     <div className="w-full md:w-1/3">
                         <h3 className="text-lg font-semibold mb-4">Services</h3>
-                        <p className='text-xs mb-2'>Freelance Web Development</p>
-                        <p className='text-xs mb-2'>DevOps Contracting</p>{/* Add your services content here */}
+                        <p className='text-xs mb-2'>Web Development</p>
+                        <p className='text-xs mb-2'>DevOps</p>{/* Add your services content here */}
                     </div>
                     <div className="w-full md:w-1/3">
                         <h3 className="text-lg font-semibold mb-4">Social Media</h3>

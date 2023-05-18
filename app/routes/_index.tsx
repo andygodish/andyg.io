@@ -56,8 +56,9 @@ export default function Index() {
                     </TextSectionHeader>
                     <TextSectionBody textSize='text-lg' textAlign='text-justify'>
                         While not an extensive list, here are some of the technologies I've worked with links to my own documented use cases written with my 
-                        self-hosted wiki application, powered by <Link to={'https://js.wiki/'} className="text-ubuntuOrange-700">Wiki.js</Link>. Future iterations of this app will include a full deployment of my Wiki.js. For now, the full project is deployed to an RKE2 cluster 
-                        running in my homelab. All links will direct you to the markdown files stored in github. 
+                        self-hosted <Link to={'https://js.wiki/'} className="text-ubuntuOrange-700">Wiki.js</Link> instance. Future iterations of this app will 
+                        include a full deployment of my Wiki.js. For now, the full project is deployed to an RKE2 cluster running in my homelab. All links will 
+                        direct you to the markdown files stored in github. 
                     </TextSectionBody>
                     <div className=" mt-6 flex flex-wrap gap-8">
                         {techStackLogos.map((img) => (

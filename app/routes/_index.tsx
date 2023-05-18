@@ -35,26 +35,31 @@ export default function Index() {
                 <TextSectionHeader textSize='text-3xl'>
                     About
                 </TextSectionHeader>
-                <TextSectionBody textSize='text-lg'>
+                <TextSectionBody textAlign='text-justify' textSize='text-lg'>
                     After spending several years in sports medicine, I moved into the tech field in 2018 - at first, writing Python scripts and performing
                     some basic scripting. I was eventually able to parlay this experience into a full stack web development position at a small defense
                     contractor, working primarily with Node.js. It was in this role that I got exposure to Docker, Kubernetes, and an entire suite of DevOps tools
                     that comprised <Link to={'https://p1.dso.mil/'} className="text-ubuntuOrange-700">Platform One. </Link> I have since developed an interest
                     in all things containers and continuously experimenting with open source technologies in my homelab and at work.
                 </TextSectionBody>
-                <TextSectionBody textSize='text-lg'>
+                <TextSectionBody textAlign='text-justify' textSize='text-lg'>
                     Currently, I work as a DevOps Engineer in Colorado where I am responsible for the development and maintenance of applications
                     running both in the cloud and on-prem infrastructure. My day to day consists of administering Kubernetes clusters, building
                     CI/CD pipelines, managing IaC repositories using Terraform, and using Ansible to manage server configurations.
                 </TextSectionBody>
-                <TextSectionBody isLastSection={true} textSize='text-lg'>
+                <TextSectionBody isLastSection={true} textAlign='text-justify' textSize='text-lg'>
                     My plan is to use this site as a resume of sorts. I'll continue to integrate additional open source services to my production environment.
                 </TextSectionBody>
                 <div className="pb-32">
-                    <TextSectionHeader textAlign='text-center' textSize='text-3xl'>
+                    <TextSectionHeader textSize='text-3xl'>
                         Tech Stack
                     </TextSectionHeader>
-                    <div className=" mt-6 flex flex-wrap justify-center gap-8">
+                    <TextSectionBody textSize='text-lg' textAlign='text-justify'>
+                        While not an extensive list, here are some of the technologies I've worked with links to my own documented use cases written with my 
+                        self-hosted wiki application, powered by <Link to={'https://js.wiki/'} className="text-ubuntuOrange-700">Wiki.js</Link>. Future iterations of this app will include a full deployment of my Wiki.js. For now, the full project is deployed to an RKE2 cluster 
+                        running in my homelab. All links will direct you to the markdown files stored in github. 
+                    </TextSectionBody>
+                    <div className=" mt-6 flex flex-wrap gap-8">
                         {techStackLogos.map((img) => (
                             <a
                                 key={img.href}

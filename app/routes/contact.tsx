@@ -3,6 +3,7 @@ import { useActionData } from "@remix-run/react";
 import ContactForm from "~/components/ContactForm/ContactForm";
 import { validateEmail, validateMessage, validateName } from "~/components/ContactForm/ContactForm";
 import sendContactEmail from "./models/contact.server";
+import { useNotification } from "~/utils/NotificationProvider/notification-provider";
 
 export type ContactFormData = {
   name: string | undefined;
@@ -23,18 +24,16 @@ export const action: ActionFunction = async ({ request }) => {
   if (Object.values(contactFormErrors).some(Boolean)) {
     return { contactFormErrors };
   }
-  
+
   const contactFormValues: ContactFormData = {
     name: data.name.toString(),
     email: data.email.toString(),
-    message: data.message.toString() 
+    message: data.message.toString()
   }
   sendContactEmail(contactFormValues);
 
   return redirect("/");
 }
-
-
 
 export default function Contact() {
   const actionData = useActionData();

@@ -1,6 +1,6 @@
 {
   "name": "remix-example",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "private": true,
   "sideEffects": false,
   "scripts": {
@@ -44,7 +44,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "tiny-invariant": "^1.3.1",
-    "typewriter-effect": "^2.19.0"
+    "typewriter-effect": "^2.19.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -64,6 +65,7 @@
     "@types/nodemailer": "^6.4.7",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/uuid": "^9.0.1",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.29.3",
     "autoprefixer": "^10.4.14",

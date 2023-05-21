@@ -1,6 +1,7 @@
 import { Form } from '@remix-run/react';
 import React from 'react'
 import { Input, Textarea, Button } from "@material-tailwind/react";
+import { useNotification } from '~/utils/NotificationProvider/notification-provider';
 
 export interface ContactFormProps {
     actionData: any;
@@ -29,6 +30,8 @@ export const validateMessage = (message: string) => {
 }
 
 const ContactForm: React.FC<ContactFormProps> = (props): React.ReactElement => {
+    const { setShowNotification } = useNotification();
+
     return (
         <div className='flex flex-col 
          dark:border-2 border-darkAubergine rounded-xl shadow-xl 
@@ -42,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = (props): React.ReactElement => {
                 Reach out by using the contact form below!
             </div>
 
-            <Form className='flex flex-col' method='post'>
+            <Form onSubmit={() => setShowNotification(true)} className='flex flex-col' method='post'>
                 <div className='mb-6'>
                     <Input className="text-darkAubergine dark:text-canonicalAubergine-400" color="orange" name='name' label="Name" />
                     {props.actionData?.contactFormErrors?.name ? (

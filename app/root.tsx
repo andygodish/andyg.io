@@ -15,7 +15,9 @@ import { getEnv } from "../env.server";
 import { NonFlashOfWrongThemeEls, Theme, ThemeProvider, useTheme } from "./utils/theme-provider";
 import clsx from "clsx";
 import { getThemeSession } from "./utils/theme.server";
-
+import { Notification } from "./components/Notification/Notification";
+import { NotificationProvider } from "./utils/NotificationProvider/notification-provider";
+import { useNotification } from "./utils/NotificationProvider/notification-provider";
 
 export type LoaderData = {
   ENV: any;
@@ -39,6 +41,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 function App() {
   const data = useLoaderData() // data is the return value of the loader function above
   const [theme] = useTheme();
+  const { showNotification } = useNotification();
 
   return (
     <html lang="en" className={clsx(theme)}>
@@ -51,6 +54,7 @@ function App() {
       </head>
       <body>
         <NavBar />
+        {showNotification && <Notification />}
         <Outlet />
         <Footer />
         <ScrollRestoration />
@@ -67,7 +71,9 @@ export default function AppWithProviders() {
 
   return (
     <ThemeProvider specifiedTheme={data.THEME}>
-      <App />
+      <NotificationProvider>
+        <App />
+      </NotificationProvider>
     </ThemeProvider>
   );
 }

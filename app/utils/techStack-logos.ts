@@ -21,6 +21,11 @@ export const techStackLogos: TechStackLogos[] = [
         href: "https://github.com/andygodish/wikijs-storage/tree/main/kubernetes"
     },
     {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/OpenShift-LogoType.svg/959px-OpenShift-LogoType.svg.png",
+        alt: "OpenShift",
+        href: "https://github.com/andygodish/wikijs-storage/tree/main/kubernetes/openshift"
+    },
+    {
         src: "https://www.rancher.co.jp/img/brand-guidelines/assets/logos/png/color/rancher-logo-horiz-color.png",
         alt: "Rancher",
         href: "https://github.com/andygodish/wikijs-storage/tree/main/rancher"

@@ -3,9 +3,6 @@ import Typewriter from 'typewriter-effect';
 import { techStackLogos } from '~/utils/techStack-logos';
 import { TextSectionBody } from '~/components/TextSection/TextSectionBody/TextSectionBody';
 import { TextSectionHeader } from '~/components/TextSection/TextSectionHeader/TextSectionHeader';
-import { Notification } from '~/components/Notification/Notification';
-
-
 
 export default function Index() {
     return (
